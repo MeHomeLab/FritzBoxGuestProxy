@@ -1,0 +1,12 @@
+/var/log/npm-auto-sync.log {
+    weekly                 # rotate once a week
+    rotate 8               # keep 8 old logs (~2 months)
+    missingok              # don’t complain if log missing
+    notifempty             # skip if empty
+    compress               # gzip old logs
+    delaycompress          # compress the previous log, not the current
+    create 0640 root adm   # recreate new log with sane permissions
+    dateext                # add date to rotated filenames
+    maxsize 5M             # rotate earlier if file >5 MB
+    su root adm            # run as root/adm if needed
+}

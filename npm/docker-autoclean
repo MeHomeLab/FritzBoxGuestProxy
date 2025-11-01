@@ -1,0 +1,10 @@
+/var/log/docker-autoclean.log {
+    size 5M                # rotate when file exceeds 5 MB
+    rotate 8               # keep ~8 × 5MB ≈ 40 MB total
+    missingok
+    notifempty
+    compress
+    delaycompress
+    dateext
+    create 0640 root adm
+}

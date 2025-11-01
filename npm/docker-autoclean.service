@@ -1,0 +1,6 @@
+[Unit]
+Description=Automatic Docker cleanup
+
+[Service]
+Type=oneshot
+ExecStart=/usr/local/bin/docker-autoclean.sh

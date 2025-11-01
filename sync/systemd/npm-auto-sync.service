@@ -1,0 +1,11 @@
+[Unit]
+Description=Auto-update NPM targets from Fritz!Box/ARP
+After=network-online.target docker.service
+Wants=network-online.target
+Requires=docker.service
+
+[Service]
+Type=oneshot
+WorkingDirectory=/opt/npm-auto-sync
+ExecStart=/opt/npm-auto-sync/.venv/bin/python /opt/npm-auto-sync/update_npm_from_fritz.py
+User=root
